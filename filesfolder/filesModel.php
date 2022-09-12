@@ -11,12 +11,12 @@ class FilesModel extends Database{
         return $stmt;
     }
 
-    public function getfiles(){
-        $getFilesQuery = "SELECT * FROM contactlist WHERE id = ?";
-        $stmt = $this->connect()->prepare($getFilesQuery);
-        $stmt->bindParam(1, $this->id);
-        $stmt->execute();
-        return $stmt;
-    }
+    // public function getfiles(){
+    //     $getFilesQuery = "SELECT * FROM contactlist WHERE id = ?";
+    //     $stmt = $this->connect()->prepare($getFilesQuery);
+    //     $stmt->bindParam(1, $this->id);
+    //     $stmt->execute();
+    //     return $stmt;
+    // }
     
 }

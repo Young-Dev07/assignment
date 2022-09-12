@@ -3,24 +3,16 @@ class FilesContrl extends FilesModel{
     public function importFiles(){
         if (isset($_POST['IMPORT'])) {
             $csvFile = fopen($_FILES['file']['tmp_name'], 'r');
-            $header =  false;
-            $data= [];
-            while (!feof($csvFile) ) {
-                $row = fgetcsv($csvFile);
-                $header = $row;
-
-               // $data = array_combine($header,$row);
-                //$query = $this->insertFiles();
-                // $query->bindParam(':phone_number', $data['phone_number'][0]);     
-                // $query->bindParam(':name', $data['name'][0]);     
-                // $query->execute();
-            
-
-                
-               
-                
+            $count = 0;
+            while ($column = fgetcsv($csvFile))  {
+                $count++;
+                print_r($column);
+                $query = $this->insertFiles();
+                $query->bindParam(':phone_number', $column[0]);    
+                $query->bindParam(':name', $column[1]);     
+                $query->execute();
             }
-            //echo $count;
+            echo 'I loop' . $count . 'times';
             if (!empty($query->execute())){
                 echo 'files imported successfully';
             }else {
