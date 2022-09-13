@@ -18,7 +18,7 @@ class FilesContrl extends FilesModel{
             }else {
                 'Error occurred while importing files';
             }
-            //return $line;
+            
         }
         echo 'import is not set';
     }
