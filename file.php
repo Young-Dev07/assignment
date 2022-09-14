@@ -1,7 +1,7 @@
 <?php 
-include_once './config/database.php';
-include_once './filesfolder/filesModel.php';
-include_once './filesfolder/filescontrl.php';
+require_once './config/database.php';
+require_once './filesfolder/filesModel.php';
+require_once './filesfolder/filescontrl.php';
 
 
 
